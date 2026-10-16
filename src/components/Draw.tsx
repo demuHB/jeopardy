@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import type { Player } from '../types'
 
-const STEPS = 34
+const STEPS = 22
 const FIRST_DELAY = 55
-const LAST_DELAY = 480
+const LAST_DELAY = 360
 
 interface Props {
   players: Player[]

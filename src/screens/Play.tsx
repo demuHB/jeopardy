@@ -188,11 +188,14 @@ function ScoreDialog({ player, onClose, onSave }: { player: Player; onClose: () 
   )
 }
 
+/** Bilder und Videos füllen den freien Platz und schrumpfen, damit alles ohne Scrollen passt. */
+const hasVisual = (c: Content) => c.media?.kind === 'image' || c.media?.kind === 'video'
+
 function ContentView({ content }: { content: Content }) {
   return (
-    <div className="content-view">
+    <div className={`content-view ${hasVisual(content) ? 'grow' : ''}`}>
       {content.text && <div className="content-text">{content.text}</div>}
-      {content.media && <MediaView media={content.media} />}
+      {content.media && <MediaView media={content.media} fill />}
     </div>
   )
 }
@@ -228,7 +231,7 @@ function QuestionView({
   }
 
   return (
-    <div className="question-overlay">
+    <div className={`question-overlay ${revealed ? 'revealed' : ''}`}>
       <div className="question-head">
         <span>{category}</span>
         <span className="question-value">{value}</span>
@@ -241,7 +244,7 @@ function QuestionView({
       <div className="question-body">
         {isContentEmpty(clue.question) ? <div className="content-text muted">(keine Frage hinterlegt)</div> : <ContentView content={clue.question} />}
         {revealed && (
-          <div className="answer-block">
+          <div className={`answer-block ${hasVisual(clue.answer) ? 'grow' : ''}`}>
             <div className="answer-label">Antwort</div>
             {isContentEmpty(clue.answer) ? <div className="content-text muted">(keine Antwort hinterlegt)</div> : <ContentView content={clue.answer} />}
           </div>
