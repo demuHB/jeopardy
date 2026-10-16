@@ -4,7 +4,7 @@ import { deleteSession, saveSession } from '../storage'
 import { applyAwards, computeAwards } from '../scoring'
 import { clueValue, isContentEmpty, totalClues } from '../util'
 import { MediaView } from '../components/MediaView'
-import { Wheel } from '../components/Wheel'
+import { Draw } from '../components/Draw'
 import { Modal } from '../components/Modal'
 
 interface Props {
@@ -38,7 +38,7 @@ export function Play({ game, initial, onExit, onRestart }: Props) {
           <button onClick={onExit}>← Übersicht</button>
           <h2>{game.title}</h2>
         </header>
-        <Wheel players={session.players} onDone={(i) => setSession({ ...session, currentIndex: i, phase: 'board' })} />
+        <Draw players={session.players} onDone={(i) => setSession({ ...session, currentIndex: i, phase: 'board' })} />
       </div>
     )
   }

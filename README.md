@@ -8,7 +8,7 @@ Eigenes Jeopardy-Quiz im Browser: Kategorien, Fragen und Antworten selbst anlege
 
 - Beliebig viele Kategorien und Fragen pro Kategorie (je 1–10), Punktwerte frei einstellbar (auch pro Frage)
 - Frage und Antwort jeweils mit Text und optional Bild, Video oder Audio
-- Mehrere Spieler, Startspieler wird per Glücksrad ausgelost, danach wird reihum gewählt
+- Mehrere Spieler, Startspieler wird ausgelost (Namen wechseln schnell und bleiben bei einem stehen), danach wird reihum gewählt
 - Option: Wer die Frage gewählt hat, bekommt bei richtiger Antwort die doppelte Punktzahl
 - Alle raten mit – nach dem Aufdecken werden alle angeklickt, die richtig lagen
 - Punkte per Klick korrigierbar, letzte Frage rückgängig machbar
